@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel]
+# Build only for Python 3.10 and 3.11 to save time
+build = "cp310-* cp311-*"
+
+# Run tests after building to make sure the C code actually works
+test-command = "python -c \"import fast_math; print(fast_math.multiply(2, 2))\""
