@@ -3,6 +3,8 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.cibuildwheel]
+# Skip 32-bit Windows (win32) and older Linux architectures (i686)
+skip = "*-win32 *-manylinux_i686"
 # Build only for Python 3.10 and 3.11 to save time
 build = "cp310-* cp311-*"
 

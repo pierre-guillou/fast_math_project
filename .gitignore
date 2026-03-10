@@ -8,3 +8,7 @@ build/
 # Compiled C binaries (Important!)
 *.so
 *.pyd
+
+# Emacs backup files
+*~
+\#*\#

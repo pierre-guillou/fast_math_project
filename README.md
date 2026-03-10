@@ -1,3 +1,5 @@
+![Build Status](https://github.com/petrdokladal/fast_math_project/actions/workflows/build_wheels.yml/badge.svg)
+
 Compile and install code locally
 
 pip install -e .
