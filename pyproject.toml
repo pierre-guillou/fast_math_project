@@ -2,6 +2,12 @@
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "fast_math"
+version = "0.1"
+requires-python = '>=3.10'
+readme = "README.md"
+
 [tool.cibuildwheel]
 # Skip 32-bit Windows (win32) and older Linux architectures (i686)
 skip = "*-win32 *-manylinux_i686"
@@ -10,3 +16,9 @@ build = "cp310-* cp311-*"
 
 # Run tests after building to make sure the C code actually works
 test-command = "python -c \"import fast_math; print(fast_math.multiply(2, 2))\""
+
+[tool.setuptools]
+packages = ["fast_math"]
+ext-modules = [
+  { name = "fast_math.fast_math_c", sources = ["fast_math/matmul.c"] }
+]
